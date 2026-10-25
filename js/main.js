@@ -30,8 +30,43 @@
 			}
 		});
 
-		window.matchMedia('(min-width: 1001px)').addEventListener('change', function (e) {
+		window.matchMedia('(min-width: 1061px)').addEventListener('change', function (e) {
 			if (e.matches) setNav(false);
+		});
+	}
+
+	// Resume viewer: show the PDF inside the site instead of leaving the page
+	var resume = document.getElementById('resume-dialog');
+
+	if (resume && typeof resume.showModal === 'function') {
+		var frame = resume.querySelector('.resume-frame');
+		var fallback = resume.querySelector('.resume-fallback');
+		// Browsers without a built-in PDF viewer (e.g. Chrome on Android) get open/download buttons instead
+		var canShowPdf = navigator.pdfViewerEnabled !== false;
+
+		document.querySelectorAll('[data-resume]').forEach(function (link) {
+			link.addEventListener('click', function (e) {
+				e.preventDefault();
+				if (canShowPdf) {
+					if (!frame.getAttribute('src')) frame.setAttribute('src', frame.getAttribute('data-src'));
+				} else {
+					frame.hidden = true;
+					fallback.hidden = false;
+				}
+				resume.showModal();
+				document.documentElement.classList.add('resume-open');
+			});
+		});
+
+		resume.querySelector('[data-close]').addEventListener('click', function () { resume.close(); });
+
+		// Clicking the dimmed backdrop closes the viewer
+		resume.addEventListener('click', function (e) {
+			if (e.target === resume) resume.close();
+		});
+
+		resume.addEventListener('close', function () {
+			document.documentElement.classList.remove('resume-open');
 		});
 	}
 
@@ -54,7 +89,7 @@
 
 	// Highlight the nav link for the section in view
 	var links = {};
-	document.querySelectorAll('.site-nav ul a[href^="#"]').forEach(function (a) {
+	document.querySelectorAll('.site-nav ol a[href^="#"]').forEach(function (a) {
 		links[a.getAttribute('href').slice(1)] = a;
 	});
 
