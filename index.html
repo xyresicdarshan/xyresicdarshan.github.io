@@ -1,765 +1,477 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Darshan's Portfolio</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+	<title>Darshan Kusumakar | Scrum Master</title>
+	<meta name="description" content="Darshan Kusumakar - Scrum Master at Workpulse Software with 5+ years of enterprise application development experience and a .NET technical background.">
+	<meta name="author" content="Darshan Kusumakar">
+	<meta name="theme-color" content="#1d4ed8">
 
-  <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Darshan Kusumakar | Scrum Master">
+	<meta property="og:description" content="Scrum Master | Agile Delivery | .NET Technical Background">
+	<meta property="og:site_name" content="Darshan Kusumakar">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Darshan Kusumakar | Scrum Master">
+	<meta name="twitter:description" content="Scrum Master | Agile Delivery | .NET Technical Background">
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.png">
+	<link rel="icon" href="favicon.svg" type="image/svg+xml">
+	<link rel="alternate icon" href="favicon.png" type="image/png">
 
-	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-	<!-- Flaticons  -->
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<!-- Theme style  -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+	<!-- Icon sprite -->
+	<svg xmlns="http://www.w3.org/2000/svg" class="icon-sprite" aria-hidden="true" focusable="false">
+		<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+		<symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+		<symbol id="i-unlock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></symbol>
+		<symbol id="i-trend" viewBox="0 0 24 24"><path d="M22 7l-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+		<symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></symbol>
+		<symbol id="i-cycle" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5M3 21v-5h5"/></symbol>
+		<symbol id="i-code" viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></symbol>
+		<symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></symbol>
+		<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+		<symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+		<symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5M12 15V3"/></symbol>
+		<symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"/></symbol>
+		<symbol id="i-grad" viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+		<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
+		<symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
+		<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+		<symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+		<symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+	</svg>
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+	<a class="skip-link" href="#main">Skip to content</a>
 
-	</head>
-	<body>
-	<div id="colorlib-page">
-		<div class="container-wrap">
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-			<div class="text-center">
-				<div class="author-img" style="background-image: url(images/about.jpg);"></div>
-				<h1 id="colorlib-logo"><a href="index.html">Darshan Kusumakar</a></h1>
-				<span class="position"><a href="#">B.Tech-CSE Student</a></span>
-			</div>
-			<nav id="colorlib-main-menu" role="navigation" class="navbar">
-				<div id="navbar" class="collapse">
-					<ul>
-						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
-						<li><a href="#" data-nav-section="about">About</a></li>
-						<li><a href="#" data-nav-section="services">Services</a></li>
-						<li><a href="#" data-nav-section="skills">Skills</a></li>
-						<li><a href="#" data-nav-section="education">Education</a></li>
-						<li><a href="#" data-nav-section="experience">Experience</a></li>
-						<li><a href="#" data-nav-section="work">Certifications</a></li>
-						<li><a href="#" data-nav-section="contact">Contact</a></li>
+	<header class="site-header" id="top">
+		<div class="container header-inner">
+			<a class="brand" href="#top" aria-label="Darshan Kusumakar, back to top">
+				<span class="brand-mark" aria-hidden="true">DK</span>
+				<span class="brand-text">
+					<span class="brand-name">Darshan Kusumakar</span>
+					<span class="brand-role">Scrum Master</span>
+				</span>
+			</a>
 
+			<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+				<svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
+				<svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
+				<span class="sr-only">Menu</span>
+			</button>
+
+			<nav class="site-nav" id="site-nav" aria-label="Main">
+				<ul>
+					<li><a href="#about">About</a></li>
+					<li><a href="#expertise">Expertise</a></li>
+					<li><a href="#experience">Experience</a></li>
+					<li><a href="#products">Products</a></li>
+					<li><a href="#skills">Skills</a></li>
+					<li><a href="#credentials">Credentials</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+				<a class="btn btn-primary btn-sm" href="Darshan_Kusumakar_Scrum_Master_Resume.pdf" download>
+					<svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Resume
+				</a>
+			</nav>
+		</div>
+	</header>
+
+	<main id="main">
+
+		<!-- Hero -->
+		<section class="hero">
+			<div class="container hero-grid">
+				<div class="hero-copy">
+					<p class="eyebrow"><span class="dot" aria-hidden="true"></span> Scrum Master at Workpulse Software Pvt. Ltd.</p>
+					<h1>Darshan Kusumakar</h1>
+					<p class="hero-title">Scrum Master <span aria-hidden="true">&middot;</span> Agile Delivery <span aria-hidden="true">&middot;</span> .NET Technical Background</p>
+					<p class="hero-lead">I facilitate Scrum ceremonies, coordinate engineering, product, and QA collaboration, monitor sprint velocity and backlog health, and help remove delivery blockers, backed by 5+ years of enterprise application development experience.</p>
+					<div class="hero-actions">
+						<a class="btn btn-primary" href="Darshan_Kusumakar_Scrum_Master_Resume.pdf" download>
+							<svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Download resume
+						</a>
+						<a class="btn btn-secondary" href="#contact">Get in touch <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+					</div>
+					<ul class="hero-links" aria-label="Profiles">
+						<li><a href="https://www.linkedin.com/in/xyresic-darshan/"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg> linkedin.com/in/xyresic-darshan</a></li>
+						<li><a href="mailto:dkartz131@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> dkartz131@gmail.com</a></li>
 					</ul>
 				</div>
-				<ul class="smed">
-					<li><a href="https://www.facebook.com/Artist.Darshan"><i class="fab fa-2x fa-facebook" style="padding-top: 3; align:text-right; color:blue; text-decoration: none;"></i> Facebook</a></li>
-					<li><a href="https://www.instagram.com/_.darshan_.__/"><i class="fab fa-2x fa-instagram" style="padding-top: 3; align:text-left; color:magenta; text-decoration: none;"></i> Instagram</a></li>
-					<li><a href="mailto:dkartz131@gmail.com"><i class="far fa-2x fa-envelope" style="padding-top: 3; align:text-left; color:red; text-decoration: none;"></i> E-MAil</a></li>
-					<li><a href="https://www.linkedin.com/in/xyresic-darshan/"><i class="fab fa-2x fa-linkedin-in" style="padding-top: 3; align:text-left; color:blue; text-decoration: none;"></i> Linkdin</a></li>
-				</ul>
-			</nav>
 
-			<div class="colorlib-footer">
-				<p><small>
-				Copyright &copy;<script>document.write(new Date().getFullYear());</script> Darshan Kusumakar<i class="icon-heart" aria-hidden="true"></i></a>
-
+				<aside class="glance card" aria-label="At a glance">
+					<h2 class="glance-heading">At a glance</h2>
+					<dl class="stats">
+						<div class="stat">
+							<dt>Experience</dt>
+							<dd><span class="stat-value">5+</span> years in enterprise application development</dd>
+						</div>
+						<div class="stat">
+							<dt>Scrum Master since</dt>
+							<dd><span class="stat-value">Aug 2025</span> facilitating Agile delivery at Workpulse</dd>
+						</div>
+						<div class="stat">
+							<dt>Products</dt>
+							<dd><span class="stat-value">6</span> Workpulse enterprise products</dd>
+						</div>
+						<div class="stat">
+							<dt>Community</dt>
+							<dd><span class="stat-value">1,000+</span> GDG Indore event attendees</dd>
+						</div>
+					</dl>
+					<div class="cadence">
+						<p class="cadence-label">Ceremonies I facilitate</p>
+						<ol class="cadence-steps">
+							<li>Sprint planning</li>
+							<li>Daily stand-ups</li>
+							<li>Sprint reviews</li>
+							<li>Retrospectives</li>
+						</ol>
+					</div>
+				</aside>
 			</div>
-		</aside>
+		</section>
 
-		<div id="colorlib-main">
-			<section id="colorlib-hero" class="js-fullheight" data-section="home">
-				<div class="flexslider js-fullheight">
-					<ul class="slides">
-				   	<li style="background-image: url(images/img_bg_1.jpg);">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner js-fullheight">
-					   					<div class="desc">
-						   					<h1 >Hi! <br>I'm Darshan</h1>
-						   					<h2 style="color: white;"><span>Computer Science & Engineering Student</span>, Aiming to leverage proven critical thinking, creative thinking to successfully fill the and creating awesome and
-            								effective Visual identities for companies of all size.</h2>
-												<p style="color: white;"><a href="https://drive.google.com/file/d/1sW9k1NByxUu9QOPqrZ88bECbeI9IOzwp/view?usp=sharing" class="btn btn-primary btn-learn" style="color: white;">Download CV <i class="icon-download4"></i></a></p>
-											</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				   	<li style="background-image: url(images/img_bg_2.jpg);">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner">
-					   					<div class="desc">
-						   					<h1>I am <br>a Developer</h1><br><br>
-												<h2>Flutter | Web Development | Python | JAVA | TensorFlow | Graphics Design</h2>
-												<p><a class="btn btn-primary btn-learn">View Portfolio <i class="icon-briefcase3"></i></a></p>
-											</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				  	</ul>
-			  	</div>
-			</section>
-
-			<section class="colorlib-about" data-section="about">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-										<span class="heading-meta">About Us</span>
-										<h2 class="colorlib-heading">Who Am I?</h2>
-										<p><strong>Hi I'm Darshan Kusumakar</strong> Focus Computer Science & Engineering student currently attending Sagar Institute Of Research And Technology.Aiming to leverage proven critical thinking, creative thinking to successfully fill the <strong>Web Development | Java | C++ | Flutter | Tensorflow and creating awesome and
-            	effective Visual identities</strong> for companies of all size.
-              	 seeking to ﬁnd the opportunity to work in a fun and challenging working environment that will encourage
-                me to improve and learn new and necessary skills as well as be motivated by the company to do my best for
-              the sake of helping myself and the company advance in the industry..
-               Frequently praised as efficient by my peers, I can be relied upon to help your company achieve its goals.</p>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-									<div class="services color-1">
-										<span class="icon2"><i class="icon-bulb"></i></span>
-										<h3>Graphic Design</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
-									<div class="services color-2">
-										<span class="icon2"><i class="icon-globe-outline"></i></span>
-										<h3>Web Design</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
-									<div class="services color-3">
-										<span class="icon2"><i class="icon-data"></i></span>
-										<h3>Software</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
-									<div class="services color-4">
-										<span class="icon2"><i class="icon-phone3"></i></span>
-										<h3>Application</h3>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-									<div class="hire">
-										<h2>I am happy to know you <br>that 5+ projects done sucessfully in my Acadamic Session!</h2>
-										<a href="#" class="btn-hire">Hire me</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+		<!-- About -->
+		<section class="section" id="about" aria-labelledby="about-title">
+			<div class="container about-grid">
+				<div>
+					<p class="section-kicker">About</p>
+					<h2 class="section-title" id="about-title">Agile delivery with a developer's understanding</h2>
 				</div>
-			</section>
-
-
-			
-			<section class="colorlib-services" data-section="services">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">What I do?</span>
-							<h2 class="colorlib-heading">Here are some of my expertise</h2>
-						</div>
-					</div>
-					<div class="row row-pt-md">
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-1">
-								<span class="icon">
-									<i class="icon-bulb"></i>
-								</span>
-								<div class="desc">
-									<h3>Innovative Ideas</h3>
-									<p>Creating awesome and effective Visual identites</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-2">
-								<span class="icon">
-									<i class="icon-globe-outline"></i>
-								</span>
-								<div class="desc">
-									<h3>Web Development</h3>
-									<p>HTML5, CSS3, BootStrap, JS, JQuery, Sass </p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-3">
-								<span class="icon">
-									<i class="icon-layers2 text-primary mb-4"></i>
-								</span>
-								<div class="desc">
-									<h3>Graphic Design</h3>
-									<p>Effective Graphic Designs using Photoshop & Illustrator</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-4">
-								<span class="icon">
-									<i class="icon-phone3"></i>
-								</span>
-								<div class="desc">
-									<h3>App Development</h3>
-									<p>Android & IOS Mobile Application Development</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-5">
-								<span class="icon">
-									<i class="icon-briefcase3"></i>
-								</span>
-								<div class="desc">
-									<h3>Technologies</h3>
-									<p>ML, TensorFlow, Flutter, Python, GCP</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-6">
-								<span class="icon">
-									<i class="icon-data"></i>
-								</span>
-								<div class="desc">
-									<h3>Software</h3>
-									<p>Flexible to work with Latest Softwares</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			
-			<div id="colorlib-counter" class="colorlib-counters" style="background-image: url(images/cover_bg_1.jpg);" data-stellar-background-ratio="0.5">
-				<div class="overlay"></div>
-				<div class="colorlib-narrow-content">
-					<div class="row">
-					</div>
-					<div class="row">
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="50" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Cups of coffee</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="7" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Projects</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="3" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Clients</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="2" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Partners</span>
-						</div>
-					</div>
+				<div class="about-body reveal">
+					<p>I'm a Scrum Master and software development professional with <strong>5+ years of experience in enterprise application development</strong>, facilitating Agile delivery since August 2025 at Workpulse Software.</p>
+					<p>I facilitate Scrum ceremonies, coordinate collaboration across <strong>engineering, product, and QA</strong>, monitor <strong>sprint velocity and backlog health</strong>, and help remove delivery blockers. My technical foundation in <strong>.NET, REST APIs, Angular, and SQL Server</strong> supports clear communication between technical teams and product stakeholders.</p>
+					<p>I'm seeking Scrum Master opportunities focused on <strong>predictable delivery, team collaboration, and continuous improvement</strong>.</p>
 				</div>
 			</div>
+		</section>
 
-			<section class="colorlib-skills" data-section="skills">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">My Specialty</span>
-							<h2 class="colorlib-heading animate-box">My Skills</h2>
-						</div>
+		<!-- Expertise -->
+		<section class="section section-alt" id="expertise" aria-labelledby="expertise-title">
+			<div class="container">
+				<div class="section-head">
+					<p class="section-kicker">Expertise</p>
+					<h2 class="section-title" id="expertise-title">How I support Agile teams</h2>
+				</div>
+				<div class="card-grid">
+					<article class="card feature reveal">
+						<span class="feature-icon" aria-hidden="true"><svg class="icon"><use href="#i-calendar"/></svg></span>
+						<h3>Scrum ceremonies</h3>
+						<p>Facilitate sprint planning, daily stand-ups, sprint reviews, and retrospectives for engineering teams.</p>
+					</article>
+					<article class="card feature reveal">
+						<span class="feature-icon" aria-hidden="true"><svg class="icon"><use href="#i-users"/></svg></span>
+						<h3>Cross-functional facilitation</h3>
+						<p>Coordinate collaboration across engineering, product, and QA teams to support shared priorities and delivery alignment.</p>
+					</article>
+					<article class="card feature reveal">
+						<span class="feature-icon" aria-hidden="true"><svg class="icon"><use href="#i-unlock"/></svg></span>
+						<h3>Impediment removal</h3>
+						<p>Identify and help remove delivery blockers to enable efficient sprint execution.</p>
+					</article>
+					<article class="card feature reveal">
+						<span class="feature-icon" aria-hidden="true"><svg class="icon"><use href="#i-trend"/></svg></span>
+						<h3>Delivery metrics</h3>
+						<p>Track sprint velocity, backlog health, and delivery metrics to identify delivery concerns and support team improvement.</p>
+					</article>
+					<article class="card feature reveal">
+						<span class="feature-icon" aria-hidden="true"><svg class="icon"><use href="#i-list"/></svg></span>
+						<h3>Backlog management</h3>
+						<p>Backlog grooming, story estimation, and sprint execution that keep the backlog healthy.</p>
+					</article>
+					<article class="card feature reveal">
+						<span class="feature-icon" aria-hidden="true"><svg class="icon"><use href="#i-cycle"/></svg></span>
+						<h3>Agile adoption</h3>
+						<p>Support adoption of Agile practices and transparent communication workflows, with a focus on continuous improvement.</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<!-- Experience -->
+		<section class="section" id="experience" aria-labelledby="experience-title">
+			<div class="container">
+				<div class="section-head">
+					<p class="section-kicker">Experience</p>
+					<h2 class="section-title" id="experience-title">Career at Workpulse Software Pvt. Ltd.</h2>
+					<p class="section-intro">From Junior .NET Developer in August 2021 to Scrum Master today.</p>
+				</div>
+
+				<ol class="timeline">
+					<li class="timeline-item reveal">
+						<article class="card role">
+							<header class="role-head">
+								<div>
+									<h3>Scrum Master</h3>
+									<p class="role-org">Workpulse Software Pvt. Ltd.</p>
+								</div>
+								<p class="role-meta"><span class="badge">Current</span> August 2025 &ndash; Present</p>
+							</header>
+							<ul class="role-points">
+								<li>Facilitate Scrum ceremonies, including sprint planning, daily stand-ups, sprint reviews, and retrospectives for engineering teams.</li>
+								<li>Coordinate collaboration across engineering, product, and QA teams to support shared priorities and delivery alignment.</li>
+								<li>Track sprint velocity, backlog health, and delivery metrics to identify delivery concerns and support team improvement.</li>
+								<li>Identify and help remove delivery blockers to enable efficient sprint execution.</li>
+								<li>Support adoption of Agile practices and transparent communication workflows.</li>
+							</ul>
+						</article>
+					</li>
+					<li class="timeline-item reveal">
+						<article class="card role">
+							<header class="role-head">
+								<div>
+									<h3>Senior .NET Developer</h3>
+									<p class="role-org">Workpulse Software Pvt. Ltd.</p>
+								</div>
+								<p class="role-meta"><span class="badge">Current</span> August 2025 &ndash; Present</p>
+							</header>
+							<ul class="role-points">
+								<li>Design, develop, and maintain enterprise web applications using .NET and Angular.</li>
+								<li>Build and maintain REST APIs supporting multiple enterprise product modules.</li>
+								<li>Investigate defects and improve application reliability through debugging and technical improvements.</li>
+								<li>Collaborate with product and QA teams to deliver product enhancements and software releases.</li>
+							</ul>
+						</article>
+					</li>
+					<li class="timeline-item reveal">
+						<article class="card role">
+							<header class="role-head">
+								<div>
+									<h3>.NET Developer</h3>
+									<p class="role-org">Workpulse Software Pvt. Ltd.</p>
+								</div>
+								<p class="role-meta">August 2023 &ndash; August 2025</p>
+							</header>
+							<ul class="role-points">
+								<li>Developed web clients and reporting dashboards using .NET, Angular, and DevExpress.</li>
+								<li>Built and maintained API services and database procedures for enterprise product modules.</li>
+								<li>Investigated and fixed defects through testing and debugging, helping reduce user-reported issues.</li>
+								<li>Collaborated with cross-functional teams to deliver product enhancements.</li>
+							</ul>
+						</article>
+					</li>
+					<li class="timeline-item reveal">
+						<article class="card role">
+							<header class="role-head">
+								<div>
+									<h3>Junior .NET Developer</h3>
+									<p class="role-org">Workpulse Software Pvt. Ltd.</p>
+								</div>
+								<p class="role-meta">August 2021 &ndash; August 2023</p>
+							</header>
+							<ul class="role-points">
+								<li>Supported API development and integration across application modules.</li>
+								<li>Contributed to product testing, quality assurance, and defect investigation.</li>
+								<li>Developed foundational experience in enterprise application development and team-based delivery.</li>
+							</ul>
+						</article>
+					</li>
+				</ol>
+			</div>
+		</section>
+
+		<!-- Products -->
+		<section class="section section-alt" id="products" aria-labelledby="products-title">
+			<div class="container">
+				<div class="section-head">
+					<p class="section-kicker">Selected product experience</p>
+					<h2 class="section-title" id="products-title">Workpulse products I've worked on</h2>
+				</div>
+				<div class="card-grid">
+					<article class="card product reveal">
+						<span class="product-mark" aria-hidden="true">B</span>
+						<h3>Workpulse Book</h3>
+						<p>Enterprise compliance and operations platform for task tracking, reporting, and operational visibility across multiple locations.</p>
+						<ul class="tags" aria-label="Technologies">
+							<li>.NET</li><li>Angular</li><li>AngularJS</li><li>DevExpress</li><li>Azure WebJobs</li><li>MSSQL</li>
+						</ul>
+					</article>
+					<article class="card product reveal">
+						<span class="product-mark" aria-hidden="true">A</span>
+						<h3>Workpulse Audit</h3>
+						<p>Audit management platform supporting compliance checks and operational monitoring across multiple stores.</p>
+						<ul class="tags" aria-label="Technologies">
+							<li>.NET</li><li>AngularJS</li><li>DevExpress</li><li>REST APIs</li><li>Azure WebJobs</li><li>Entity Framework</li><li>Stored Procedures</li>
+						</ul>
+					</article>
+					<article class="card product reveal">
+						<span class="product-mark" aria-hidden="true">P</span>
+						<h3>Workpulse People</h3>
+						<p>Employee training and assessment platform for onboarding pathways and skills development.</p>
+						<ul class="tags" aria-label="Technologies">
+							<li>.NET</li><li>AngularJS</li><li>DevExtreme Reports</li><li>REST APIs</li><li>Azure WebJobs</li><li>Stored Procedures</li>
+						</ul>
+					</article>
+					<article class="card product reveal">
+						<span class="product-mark" aria-hidden="true">D</span>
+						<h3>Workpulse Desk</h3>
+						<p>Enterprise ticket management system for tracking operational issues and coordinating resolution workflows.</p>
+						<ul class="tags" aria-label="Technologies">
+							<li>.NET</li><li>Angular</li><li>AngularJS</li><li>SignalR</li><li>REST APIs</li><li>Azure WebJobs</li><li>Stored Procedures</li>
+						</ul>
+					</article>
+					<article class="card product reveal">
+						<span class="product-mark" aria-hidden="true">W</span>
+						<h3>Workpulse Wow</h3>
+						<p>Employee recognition platform supporting peer-to-peer appreciation and engagement programs.</p>
+						<ul class="tags" aria-label="Technologies">
+							<li>.NET</li><li>AngularJS</li><li>REST APIs</li><li>Azure WebJobs</li><li>Entity Framework</li><li>Stored Procedures</li>
+						</ul>
+					</article>
+					<article class="card product reveal">
+						<span class="product-mark" aria-hidden="true">G</span>
+						<h3>Workpulse Gismo</h3>
+						<p>Guest Satisfaction Management (GSM) system for tracking, assigning, and resolving customer cases across multiple locations.</p>
+						<ul class="tags" aria-label="Technologies">
+							<li>.NET</li><li>Angular</li><li>REST APIs</li><li>Azure WebJobs</li><li>Entity Framework</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>jQuery</li><li>Stored Procedures</li>
+						</ul>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<!-- Skills -->
+		<section class="section" id="skills" aria-labelledby="skills-title">
+			<div class="container">
+				<div class="section-head">
+					<p class="section-kicker">Core competencies</p>
+					<h2 class="section-title" id="skills-title">Methodologies &amp; tools</h2>
+				</div>
+				<div class="skills-grid">
+					<div class="skill-group reveal">
+						<h3>Agile delivery</h3>
+						<ul class="tags tags-lg">
+							<li>Scrum</li><li>Agile practices</li><li>Sprint planning</li><li>Daily stand-ups</li><li>Sprint reviews</li><li>Retrospectives</li><li>Continuous improvement</li>
+						</ul>
 					</div>
-					<div class="row">
-						
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>Flutter</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="75"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:70%">
-								    <span>70%</span>
-								  	</div>
-								</div>
-							</div>
+					<div class="skill-group reveal">
+						<h3>Sprint &amp; backlog management</h3>
+						<ul class="tags tags-lg">
+							<li>Backlog grooming</li><li>Story estimation</li><li>Sprint execution</li><li>Backlog health</li><li>Sprint velocity</li><li>Delivery metrics</li>
+						</ul>
+					</div>
+					<div class="skill-group reveal">
+						<h3>Team facilitation</h3>
+						<ul class="tags tags-lg">
+							<li>Cross-functional collaboration</li><li>Engineering / product / QA coordination</li><li>Transparent communication</li><li>Blocker identification and removal</li>
+						</ul>
+					</div>
+					<div class="skill-group reveal">
+						<h3>Technical background</h3>
+						<ul class="tags tags-lg">
+							<li>C#</li><li>.NET</li><li>REST APIs</li><li>Angular</li><li>AngularJS</li><li>Entity Framework</li><li>SignalR</li><li>Azure WebJobs</li>
+						</ul>
+					</div>
+					<div class="skill-group reveal">
+						<h3>Database &amp; tools</h3>
+						<ul class="tags tags-lg">
+							<li>Microsoft SQL Server (MSSQL)</li><li>Stored procedures</li><li>Query optimization</li><li>DevExpress</li><li>DevExtreme</li><li>SSMS</li><li>Postman</li><li>Git</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Credentials -->
+		<section class="section section-alt" id="credentials" aria-labelledby="credentials-title">
+			<div class="container">
+				<div class="section-head">
+					<p class="section-kicker">Credentials</p>
+					<h2 class="section-title" id="credentials-title">Certifications, education &amp; leadership</h2>
+				</div>
+				<div class="credentials-grid">
+					<div class="card reveal">
+						<h3 class="card-title"><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg> Certifications</h3>
+						<ul class="cert-list">
+							<li class="cert-featured">
+								<span class="cert-name">Agile Scrum Master</span>
+								<span class="cert-issuer">Infosys Springboard</span>
+							</li>
+							<li><span class="cert-name">SQL Basic &amp; Intermediate</span><span class="cert-issuer">HackerRank</span></li>
+							<li><span class="cert-name">REST API Intermediate</span><span class="cert-issuer">HackerRank</span></li>
+							<li><span class="cert-name">Angular Basic</span><span class="cert-issuer">HackerRank</span></li>
+							<li><span class="cert-name">JavaScript Basic</span><span class="cert-issuer">HackerRank</span></li>
+						</ul>
+					</div>
+
+					<div class="stack">
+						<div class="card reveal">
+							<h3 class="card-title"><svg class="icon" aria-hidden="true"><use href="#i-grad"/></svg> Education</h3>
+							<p class="edu-degree">B.Tech, Computer Science &amp; Engineering</p>
+							<p class="edu-school">Sagar Institute of Research &amp; Technology, Indore</p>
+							<p class="edu-meta">Rajiv Gandhi Technical University, Bhopal &middot; August 2021</p>
 						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>C/C++</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-5" role="progressbar" aria-valuenow="60"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:75%">
-								    <span>75%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>HTML5</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="85"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:85%">
-								    <span>85%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>CSS3</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="90"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:80%">
-								    <span>80%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>TensorFlow</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="70"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:60%">
-								    <span>60%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>SEO</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="70"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:70%">
-								    <span>70%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>Photoshop</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="70"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:75%">
-								    <span>75%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>Graphics</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="80"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:80%">
-								    <span>80%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>Java</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="70"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:70%">
-								    <span>70%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>Python</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="70"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:65%">
-								    <span>65%</span>
-								  	</div>
-								</div>
-							</div>
+
+						<div class="card reveal">
+							<h3 class="card-title"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> Leadership &amp; achievements</h3>
+							<ul class="check-list">
+								<li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Co-Organizer, Google Developers Group (GDG) Indore:</strong> helped organize workshops and community events for 1,000+ attendees.</span></li>
+								<li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Secured third place in a research paper presentation at the National Conference on Research and Innovation in Education.</span></li>
+								<li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Organized technical sessions and workshops to encourage participation and knowledge sharing.</span></li>
+							</ul>
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
 
-			<section class="colorlib-education" data-section="education">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Education</span>
-							<h2 class="colorlib-heading animate-box">Education</h2>
-						</div>
+		<!-- Contact -->
+		<section class="section" id="contact" aria-labelledby="contact-title">
+			<div class="container">
+				<div class="contact-panel reveal">
+					<div class="contact-copy">
+						<p class="section-kicker">Contact</p>
+						<h2 class="section-title" id="contact-title">Let's work together</h2>
+						<p>I'm seeking Scrum Master opportunities focused on predictable delivery, team collaboration, and continuous improvement.</p>
+						<a class="btn btn-light" href="mailto:dkartz131@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> Email me</a>
 					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-							<div class="fancy-collapse-panel">
-								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingOne">
-									        <h4 class="panel-title">
-									            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Batchlor Degree</a>
-									        </h4>
-									    </div>
-									    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-									         <div class="panel-body">
-									            <div class="row">
-										      		<div class="col-md-6">
-										      			<p>Sagar Institute Of Research And Technology, Indore, (M.P)</p>
-										      			<ul>
-										      				<li>Relevent Course: B. Tech CSE</li>
-										      			</ul>
-
-										      		</div>
-										      		<div class="col-md-6">
-										      			<p>August 2017 - Present</p>
-										      		</div>
-										      	</div>
-									         </div>
-									    </div>
-									</div>
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingTwo">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">SENIOR SECONDARY EDUCATION
-
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-									        <div class="panel-body">
-									            <p>Shri Devi Ahilya Shishu Vihar, Indore, (M.P)</p>
-													<ul>
-														
-														<li>CBSE Board April 2017</li>
-														<li>Relevent Course: +2 (PCM + CS)</li>
-													</ul>
-									        </div>
-									        
-									    </div>
-									</div>
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingThree">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">HIGHER SECONDARY EDUCATION
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-									        <div class="panel-body">
-									            <p>Shri Devi Ahilya Shishu Vihar, Indore, (M. P.)</p>
-									            <ul>
-														
-														<li>CBSE Board April 2015</li>
-														<li>Relevent Course: 10th</li>
-													</ul>	
-									        </div>
-									    </div>
-									</div>
-
-									
-								</div>
-							</div>
-						</div>
-					</div>
+					<ul class="contact-list">
+						<li>
+							<a href="mailto:dkartz131@gmail.com">
+								<span class="contact-icon" aria-hidden="true"><svg class="icon"><use href="#i-mail"/></svg></span>
+								<span><span class="contact-label">Email</span>dkartz131@gmail.com</span>
+							</a>
+						</li>
+						<li>
+							<a href="tel:+918602519202">
+								<span class="contact-icon" aria-hidden="true"><svg class="icon"><use href="#i-phone"/></svg></span>
+								<span><span class="contact-label">Phone</span>+91 86025 19202</span>
+							</a>
+						</li>
+						<li>
+							<a href="tel:+918889652146">
+								<span class="contact-icon" aria-hidden="true"><svg class="icon"><use href="#i-phone"/></svg></span>
+								<span><span class="contact-label">Alternate phone</span>+91 88896 52146</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.linkedin.com/in/xyresic-darshan/">
+								<span class="contact-icon" aria-hidden="true"><svg class="icon"><use href="#i-linkedin"/></svg></span>
+								<span><span class="contact-label">LinkedIn</span>linkedin.com/in/xyresic-darshan</span>
+							</a>
+						</li>
+					</ul>
 				</div>
-			</section>
+			</div>
+		</section>
 
-			<section class="colorlib-experience" data-section="experience">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Experience</span>
-							<h2 class="colorlib-heading animate-box">Work Experience</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-				         <div class="timeline-centered">
+	</main>
 
-				         	 <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-5">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Current Position</a> <span></span></h2>
-					                  <p><strong>Community Lead : SAGE Develepors Club - SAGE University, Indore</strong><br>
-					                  	 <strong>The SAGE Student Ambassador - Online Exams & IT Infrastructure Task Group</strong>
-					                  </p>
-					               </div>
-					            </div>
-					         </article>
+	<footer class="site-footer">
+		<div class="container footer-inner">
+			<p>&copy; <span id="year">2026</span> Darshan Kusumakar &middot; Scrum Master</p>
+			<a href="#top">Back to top</a>
+		</div>
+	</footer>
 
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-
-					               <div class="timeline-icon color-1">
-					                  <i class="icon-pen2"></i>
-					               </div>
-
-					               <div class="timeline-label">
-					                  <h2><a href="#">Internship</a> <span>July, 2020- Sep,2020</span></h2>
-					                  <p><strong>Web Design & Development Intern at <a href="http://www.mnlabs.in/">M'n Labs.in</a><br>
-					                  </strong>
-					                  </p>
-					               </div>
-					            </div>
-					         </article>
-
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-2">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Social Media Team at GDG Indore</a> <span>May, 2020-Present</span></h2>
-					                  <p><strong>Social Media Team at Google Developers Group as a Linkdin Analyst</strong> </p>
-					               </div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-3">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Organizer</a></h2>
-					                  <p><strong>
-					                  	<ul>
-					                  		<li>Organizer Online Quiz Competition on COVID-19 <span>-Apr, 2020</span></li>
-					                  		<li>Organizing Team DevFest-19 ( Google Developers Group Indore ) <span>-Sep, 2019</span></li>
-					                  	</ul>
-					                  </strong>
-					                  </p>
-					               </div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-4">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Head Of Creativity & New Ideas</a> <span>Apr, 2018</span></h2>
-					                  <p><strong> Head of Creativity & New Ideas at E-Cell Sage University</strong></p>
-					               </div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-none">
-					               </div>
-					            </div>
-					         </article>
-					      </div>
-					   </div>
-				   </div>
-				</div>
-			</section>
-
-			<section class="colorlib-work" data-section="work">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">My Certicicates</span>
-							<h2 class="colorlib-heading animate-box">Certifications	</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(images/intern.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Certificate 1</a></h3>
-										<span>Web Design & Development Internship Certificate</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="project" style="background-image: url(images/img-1.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Certificate 02</a></h3>
-										<span>Flutter App Development Certification throgh LONDON App Brewery</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInTop">
-							<div class="project" style="background-image: url(images/img-3.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Certificate 03</a></h3>
-										<span>Programming Foundation with HTML CSS & javaScript through Coursera Learnig Plateform</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
-							<div class="project" style="background-image: url(images/img-2.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Certificate 04</a></h3>
-										<span>Intro To TensorFlow through Coursera Learning Plateform</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(images/tcs.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Certificate 05</a></h3>
-										<span>Carrier Edge Lockdown through TCSion Online Learning plateform by TCS India</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="project" style="background-image: url(images/img-6.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Certificate 06</a></h3>
-										<span>Event Organizer</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="colorlib-contact" data-section="contact">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Get in Touch</span>
-							<h2 class="colorlib-heading">Contact</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-5">
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-globe-outline"></i>
-								</div>
-								<div class="colorlib-text">
-									<p><a href="mailto:dkartz131@gmail.com">dkartz131@gmail.com</a></p>
-								</div>
-							</div>
-
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-map"></i>
-								</div>
-								<div class="colorlib-text">
-									<p>27, Juna Tukoganj,<br> Hamilton Road, Indore MP BHARAT, 452007</p>
-								</div>
-							</div>
-
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-phone"></i>
-								</div>
-								<div class="colorlib-text">
-									<p><a href="tel://">+91 860 2519 202</a><br><a href="tel://">+91 888 9652 146</a></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-7 col-md-push-1">
-							<div class="row">
-								<div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
-									<form action="mailto: dkartz131@gmail.com">
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Name">
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Email">
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Subject">
-										</div>
-										<div class="form-group">
-											<textarea name="" id="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-										</div>
-										<div class="form-group">
-											<input type="submit" class="btn btn-primary btn-send-message" value="Send Message">
-										</div>
-									</form>
-								</div>
-								
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-		</div><!-- end:colorlib-main -->
-	</div><!-- end:container-wrap -->
-	</div><!-- end:colorlib-page -->
-
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Owl carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
-	
-	
-	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
-
-	</body>
+</body>
 </html>
-
