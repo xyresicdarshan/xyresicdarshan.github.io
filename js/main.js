@@ -40,21 +40,77 @@
 
 	if (resume && typeof resume.showModal === 'function') {
 		var frame = resume.querySelector('.resume-frame');
+		var pages = resume.querySelector('.resume-pages');
 		var fallback = resume.querySelector('.resume-fallback');
-		// Browsers without a built-in PDF viewer (e.g. Chrome on Android) get open/download buttons instead
+		var status = resume.querySelector('.resume-status');
+		var pdfUrl = frame.getAttribute('data-src').split('#')[0];
+		var PDFJS = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
+		// Browsers without a built-in PDF viewer (e.g. Chrome on Android) get the pages drawn by PDF.js instead
 		var canShowPdf = navigator.pdfViewerEnabled !== false;
+		var rendering = null;
+
+		var showError = function () {
+			pages.hidden = true;
+			fallback.hidden = false;
+			status.textContent = "The resume couldn't be displayed here. You can download it instead.";
+			fallback.querySelector('.resume-fallback-actions').hidden = false;
+		};
+
+		var loadPdfJs = function () {
+			return new Promise(function (resolve, reject) {
+				if (window.pdfjsLib) return resolve(window.pdfjsLib);
+				var s = document.createElement('script');
+				s.src = PDFJS + 'pdf.min.js';
+				s.onload = function () {
+					window.pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS + 'pdf.worker.min.js';
+					resolve(window.pdfjsLib);
+				};
+				s.onerror = reject;
+				document.head.appendChild(s);
+			});
+		};
+
+		var renderPages = function () {
+			frame.hidden = true;
+			fallback.hidden = false;
+			return loadPdfJs()
+				.then(function (pdfjs) { return pdfjs.getDocument(pdfUrl).promise; })
+				.then(function (pdf) {
+					var width = pages.clientWidth || resume.clientWidth;
+					var dpr = window.devicePixelRatio || 1;
+					var chain = Promise.resolve();
+					for (var n = 1; n <= pdf.numPages; n++) {
+						chain = chain.then(function (num) {
+							return pdf.getPage(num).then(function (page) {
+								var fit = page.getViewport({ scale: 1 });
+								var viewport = page.getViewport({ scale: Math.min(width - 24, 900) / fit.width * dpr });
+								var canvas = document.createElement('canvas');
+								canvas.width = viewport.width;
+								canvas.height = viewport.height;
+								canvas.setAttribute('role', 'img');
+								canvas.setAttribute('aria-label', 'Resume page ' + num + ' of ' + pdf.numPages);
+								pages.appendChild(canvas);
+								return page.render({ canvasContext: canvas.getContext('2d'), viewport: viewport }).promise;
+							});
+						}.bind(null, n));
+					}
+					return chain;
+				})
+				.then(function () { fallback.hidden = true; pages.hidden = false; })
+				.catch(showError);
+		};
 
 		document.querySelectorAll('[data-resume]').forEach(function (link) {
 			link.addEventListener('click', function (e) {
 				e.preventDefault();
-				if (canShowPdf) {
-					if (!frame.getAttribute('src')) frame.setAttribute('src', frame.getAttribute('data-src'));
-				} else {
-					frame.hidden = true;
-					fallback.hidden = false;
-				}
 				resume.showModal();
 				document.documentElement.classList.add('resume-open');
+				if (canShowPdf) {
+					if (!frame.getAttribute('src')) frame.setAttribute('src', frame.getAttribute('data-src'));
+				} else if (!rendering) {
+					pages.hidden = false;
+					rendering = renderPages();
+				}
 			});
 		});
 
