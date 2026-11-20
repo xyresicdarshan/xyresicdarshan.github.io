@@ -5,45 +5,40 @@
 	var year = document.getElementById('year');
 	if (year) year.textContent = new Date().getFullYear();
 
-	// Mobile navigation
-	var toggle = document.querySelector('.nav-toggle');
-	var nav = document.getElementById('site-nav');
+	// Tiles fade up as they enter the viewport, staggered within each row
+	var tiles = document.querySelectorAll('.tile');
+	var showAll = function () { tiles.forEach(function (t) { t.classList.add('is-in'); }); };
 
-	function setNav(open) {
-		toggle.setAttribute('aria-expanded', String(open));
-		nav.classList.toggle('is-open', open);
+	if ('IntersectionObserver' in window) {
+		var tileObserver = new IntersectionObserver(function (entries) {
+			var visible = entries.filter(function (e) { return e.isIntersecting; });
+			visible.forEach(function (entry, i) {
+				entry.target.style.transitionDelay = (i * 70) + 'ms';
+				entry.target.classList.add('is-in');
+				tileObserver.unobserve(entry.target);
+				setTimeout(function () { entry.target.style.transitionDelay = ''; }, 900 + i * 70);
+			});
+		}, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
+		tiles.forEach(function (t) { tileObserver.observe(t); });
+	} else {
+		showAll();
 	}
 
-	if (toggle && nav) {
-		toggle.addEventListener('click', function () {
-			setNav(toggle.getAttribute('aria-expanded') !== 'true');
-		});
-
-		nav.addEventListener('click', function (e) {
-			if (e.target.closest('a')) setNav(false);
-		});
-
-		document.addEventListener('keydown', function (e) {
-			if (e.key === 'Escape' && nav.classList.contains('is-open')) {
-				setNav(false);
-				toggle.focus();
-			}
-		});
-
-		window.matchMedia('(min-width: 1061px)').addEventListener('change', function (e) {
-			if (e.matches) setNav(false);
-		});
-	}
+	// Print everything: show every tile and expand every role
+	window.addEventListener('beforeprint', function () {
+		showAll();
+		document.querySelectorAll('details').forEach(function (d) { d.open = true; });
+	});
 
 	// Resume viewer: show the PDF inside the site instead of leaving the page
 	var resume = document.getElementById('resume-dialog');
 
 	if (resume && typeof resume.showModal === 'function') {
-		var frame = resume.querySelector('.resume-frame');
+		var iframe = resume.querySelector('.resume-frame');
 		var pages = resume.querySelector('.resume-pages');
 		var fallback = resume.querySelector('.resume-fallback');
 		var status = resume.querySelector('.resume-status');
-		var pdfUrl = frame.getAttribute('data-src').split('#')[0];
+		var pdfUrl = iframe.getAttribute('data-src').split('#')[0];
 		var PDFJS = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
 		// Browsers without a built-in PDF viewer (e.g. Chrome on Android) get the pages drawn by PDF.js instead
 		var canShowPdf = navigator.pdfViewerEnabled !== false;
@@ -71,7 +66,7 @@
 		};
 
 		var renderPages = function () {
-			frame.hidden = true;
+			iframe.hidden = true;
 			fallback.hidden = false;
 			return loadPdfJs()
 				.then(function (pdfjs) { return pdfjs.getDocument(pdfUrl).promise; })
@@ -106,7 +101,7 @@
 				resume.showModal();
 				document.documentElement.classList.add('resume-open');
 				if (canShowPdf) {
-					if (!frame.getAttribute('src')) frame.setAttribute('src', frame.getAttribute('data-src'));
+					if (!iframe.getAttribute('src')) iframe.setAttribute('src', iframe.getAttribute('data-src'));
 				} else if (!rendering) {
 					pages.hidden = false;
 					rendering = renderPages();
@@ -126,45 +121,4 @@
 		});
 	}
 
-	if (!('IntersectionObserver' in window)) {
-		document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
-		return;
-	}
-
-	// Reveal content as it scrolls into view
-	var revealObserver = new IntersectionObserver(function (entries) {
-		entries.forEach(function (entry) {
-			if (entry.isIntersecting) {
-				entry.target.classList.add('is-visible');
-				revealObserver.unobserve(entry.target);
-			}
-		});
-	}, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-
-	document.querySelectorAll('.reveal').forEach(function (el) { revealObserver.observe(el); });
-
-	// Highlight the nav link for the section in view
-	var links = {};
-	document.querySelectorAll('.site-nav ol a[href^="#"]').forEach(function (a) {
-		links[a.getAttribute('href').slice(1)] = a;
-	});
-
-	var navObserver = new IntersectionObserver(function (entries) {
-		entries.forEach(function (entry) {
-			var link = links[entry.target.id];
-			if (!link) return;
-			if (!entry.isIntersecting) return;
-			Object.keys(links).forEach(function (id) {
-				links[id].classList.remove('is-active');
-				links[id].removeAttribute('aria-current');
-			});
-			link.classList.add('is-active');
-			link.setAttribute('aria-current', 'true');
-		});
-	}, { rootMargin: '-45% 0px -50% 0px' });
-
-	Object.keys(links).forEach(function (id) {
-		var section = document.getElementById(id);
-		if (section) navObserver.observe(section);
-	});
 }());
